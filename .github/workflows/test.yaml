@@ -13,6 +13,11 @@ jobs:
         with:
           python-override: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      ## Install TL-Verilog tool (SandPiper-SaaS)
+      #- name: install SandPiper-SaaS
+      #  run: pip3 install sandpiper-saas
+      
       - run: |
           yosys --version
           iverilog -V
@@ -23,6 +28,7 @@ jobs:
         run: |
           cd test
           make clean
+          #(yes | sandpiper-saas -h > /dev/null) 2>&1  # Approve SandPiper license
           make
           # make will return success even if the test fails, so check for failure in the results.xml
           ! grep failure results.xml
