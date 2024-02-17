@@ -73,6 +73,9 @@ module tt_um_template (
 );
    logic passed, failed;  // Connected to uo_out[0] and uo_out[1] respectively, which connect to Makerchip passed/failed.
 
+   assign uio_out = 8'b0;
+   assign uio_oe = 8'b0;
+   
    wire reset = ! rst_n;
 
 // ---------- Generated Code Inlined Here (before 1st \TLV) ----------
