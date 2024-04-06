@@ -16,8 +16,7 @@ COMPILE_ARGS 		+= -I$(SRC_DIR)
 
 # Verilog from TL-Verilog.
 $(SRC_DIR)/%.v: $(SRC_DIR)/%.tlv
-	cd $(SRC_DIR)
-	sandpiper-saas -i '$(<F)' -o '$(@F)' --outdir . --inlineGen --noDirectiveComments --noline --clkAlways --bestsv --iArgs
+	cd $(SRC_DIR) && sandpiper-saas -i '$(<F)' -o '$(@F)' --outdir . --inlineGen --noDirectiveComments --noline --clkAlways --bestsv --iArgs
 else
 
 # Gate level simulation:
