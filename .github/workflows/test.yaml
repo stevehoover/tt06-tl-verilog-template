@@ -20,7 +20,6 @@ jobs:
       - name: Install Python packages
         shell: bash
         run: pip install -r test/requirements.txt
-          python-version: '3.11'
 
       # Install TL-Verilog tool (SandPiper-SaaS)
       - name: install SandPiper-SaaS
