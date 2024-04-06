@@ -12,7 +12,7 @@ This is a sample testbench for a Tiny Tapeout project. It uses [cocotb](https://
 To run the RTL simulation:
 
 ```sh
-make
+make -B
 ```
 
 To run gatelevel simulation, first harden your project and copy `../runs/wokwi/results/final/verilog/gl/{your_module_name}.v` to `gate_level_netlist.v`.
@@ -20,7 +20,7 @@ To run gatelevel simulation, first harden your project and copy `../runs/wokwi/r
 Then run:
 
 ```sh
-make GATES=yes
+make -B GATES=yes
 ```
 
 ## How to view the VCD file
