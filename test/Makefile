@@ -15,7 +15,8 @@ VERILOG_SOURCES += $(addprefix $(SRC_DIR)/,$(PROJECT_SOURCES))
 COMPILE_ARGS 		+= -I$(SRC_DIR)
 
 # Verilog from TL-Verilog.
-%.v: %.tlv
+$(SRC_DIR)/%.v: $(SRC_DIR)/%.tlv
+	cd $(SRC_DIR)
 	sandpiper-saas -i '$(<F)' -o '$(@F)' --outdir . --inlineGen --noDirectiveComments --noline --clkAlways --bestsv --iArgs
 else
 
