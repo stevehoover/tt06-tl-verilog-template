@@ -4,7 +4,7 @@
 # defaults
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
-SRC_DIR = $(PWD)/../src
+SRC_DIR := $(realpath $(PWD)/../src)
 PROJECT_SOURCES = project.v
 
 ifneq ($(GATES),yes)
@@ -14,9 +14,23 @@ SIM_BUILD				= sim_build/rtl
 VERILOG_SOURCES += $(addprefix $(SRC_DIR)/,$(PROJECT_SOURCES))
 COMPILE_ARGS 		+= -I$(SRC_DIR)
 
-# Verilog from TL-Verilog.
+
+#-------------------
+# For TL-Verilog.
+
+# Verilog from TL-Verilog, including installation of SandPiper-SaaS.
 $(SRC_DIR)/%.v: $(SRC_DIR)/%.tlv
+	@pip show sandpiper-saas > /dev/null || (echo "Installing sandpiper-saas..." && pip install sandpiper-saas && (yes | sandpiper-saas -h > /dev/null) 2>&1)
+	@pip show sandpiper-saas > /dev/null || (echo "Failed to install sandpiper-saas, please install manually." && exit 1)
 	cd $(SRC_DIR) && sandpiper-saas -i '$(<F)' -o '$(@F)' --outdir . --inlineGen --noDirectiveComments --noline --clkAlways --bestsv --iArgs
+
+#-------------------
+
+
+# Use this target to ensure that Verilog "sources" are built, in case any are generated.
+.PHONY: verilog
+verilog: $(VERILOG_SOURCES)
+
 else
 
 # Gate level simulation:

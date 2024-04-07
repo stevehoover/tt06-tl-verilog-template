@@ -21,12 +21,6 @@ jobs:
         shell: bash
         run: pip install -r test/requirements.txt
 
-      # Install TL-Verilog tool (SandPiper-SaaS)
-      - name: install SandPiper-SaaS
-        run: |
-          pip3 install sandpiper-saas
-          (yes | sandpiper-saas -h > /dev/null) 2>&1  # Approve SandPiper license
-
       - name: Run tests
         run: |
           cd test

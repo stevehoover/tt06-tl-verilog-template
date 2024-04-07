@@ -13,6 +13,12 @@ jobs:
         with:
           submodules: recursive
 
+      # Build Verilog if necessary from, e.g. TL-Verilog.
+      - name: Build Verilog
+        run: |
+          cd test
+          make verilog
+
       - name: Build GDS
         uses: TinyTapeout/tt-gds-action@tt06
   
