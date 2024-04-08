@@ -1,10 +1,10 @@
 # Tiny Tapeout project information
 project:
-  title:        "Test Project"      # Project title
-  author:       "SFH"      # Your name
+  title:        ""      # Project title
+  author:       ""      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Just testing..."      # One line description of what your project does
-  language:     "TL-Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
+  description:  ""      # One line description of what your project does
+  language:     "Verilog" # other examples include SystemVerilog, TL-Verilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
