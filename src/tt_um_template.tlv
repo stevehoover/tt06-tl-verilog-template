@@ -11,7 +11,7 @@
    
    // ---SETTINGS---
    var(my_design, tt_um_example)  /// Change tt_um_example to tt_um_<your-github-username>_<name-of-your-project>. (See README.md.)
-   var(debounce_inputs, 1)        /// Set to 1 to provide synchronization and debouncing on all input signals.
+   var(debounce_inputs, 0)        /// Set to 1 to provide synchronization and debouncing on all input signals.
                                   /// use "m5_neq(m5_MAKERCHIP, 1)" to debounce unless in Makerchip.
    // --------------
    
