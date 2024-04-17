@@ -38,10 +38,12 @@ async def test_makerchip(dut):
     
     await ClockCycles(dut.clk, 1)
 
-    # passed = dut.uo_out.value & 1
-    # Currently, instead, pass blindly after 20 cycles.
+    # Pass blindly after 20 cycles.
     passed = cyc > 20
-    failed = dut.uo_out.value & 2
+    failed = False
+    # You might connect passed/failed from Makerchip to uo_out pins, e.g.:
+    # passed = dut.uo_out.value & 1
+    # failed = dut.uo_out.value & 2
     if passed:
       dut._log.info("Passed")
       break

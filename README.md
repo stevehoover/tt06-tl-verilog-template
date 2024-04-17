@@ -25,7 +25,7 @@ The GitHub action will automatically build the ASIC files using [OpenLane](https
 
 Makerchip is an online IDE for digital circuit design supporting Verilog or TL-Verilog projects. This starting template provides a virtual environment for Tiny Tapeout simulations.
 
-- [starting template](https://www.makerchip.com/sandbox?code_url=https:%2F%2Fraw.githubusercontent.com%2Fstevehoover%2Ftt06-verilog-template%2Fmain%2Fsrc%2Ftt_um_template.tlv#) (Ctrl-click for new tab) 
+- [starting template](https://www.makerchip.com/sandbox?code_url=https:%2F%2Fraw.githubusercontent.com%2Fstevehoover%2Ftt06-tl-verilog-template%2Fmain%2Fsrc%2Ftt_um_template.tlv) (Ctrl-click for new tab) 
 - [calculator circuit example](https://www.makerchip.com/sandbox?code_url=https:%2F%2Fraw.githubusercontent.com%2Fstevehoover%2Fmakerchip_examples%2Fmain%2Ftiny_tapeout_examples%2Ftt_um_calculator.tlv#) (Ctrl-click for new tab)
 
 ![tt_template_makerchip](https://github.com/stevehoover/tt05-verilog-demo/assets/11302288/37f65ea1-6898-41ac-a5b1-c9afb7b824f1)
