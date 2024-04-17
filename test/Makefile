@@ -5,7 +5,7 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR := $(realpath $(PWD)/../src)
-PROJECT_SOURCES = project.v
+PROJECT_SOURCES = project.v   # Specify xxx.v even if the true source is xxx.tlv.
 
 ifneq ($(GATES),yes)
 
